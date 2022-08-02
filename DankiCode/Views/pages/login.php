@@ -26,15 +26,14 @@
         </div>
         <!--logo-chamada-login-->
 
+
         <div class="form-login">
-            <h3 style="text-align: center;">crie sua conta</h3>
             <form action="">
-                <input type="text" name="nome" placeholder="Seu Nome...">
-                <input type="text" name="email" placeholder="E-mail...">
+                <input type="text" name="login" placeholder="Login...">
                 <input type="password" name="senha" placeholder="Senha...">
-                <input type="submit" name="acao" value="Criar Conta">
-                <input type="hidden" name="registrar" value="registrar">
+                <input type="submit" name="acao" value="Acessar">
             </form>
+            <p><a href="<?php echo INCLUDE_PATH ?>registrar">Criar Conta</a></p>
         </div>
         <!-- /.form-login -->
     </div>
