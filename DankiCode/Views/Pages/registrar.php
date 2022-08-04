@@ -28,7 +28,7 @@
 
         <div class="form-login">
             <h3 style="text-align: center;">crie sua conta</h3>
-            <form action="">
+            <form method="post">
                 <input type="text" name="nome" placeholder="Seu Nome...">
                 <input type="text" name="email" placeholder="E-mail...">
                 <input type="password" name="senha" placeholder="Senha...">
