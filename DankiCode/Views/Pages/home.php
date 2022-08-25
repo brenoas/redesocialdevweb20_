@@ -147,10 +147,15 @@
 
             <div class="friends-request-feed">
                 <h4>Solicitações de amizade</h4>
+
+                <?php 
+                    foreach(\DankiCode\Models\UsuariosModel::listarAmizadesPendentes() as $key=>$value){
+                        $usuarioInfo = \DankiCode\Models\UsuariosModel::getUsuarioById($value['enviou']);                     
+                ?>
                 <div class="friend-request-single">
                     <img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" alt="">
                     <div class="friend-request-single-info">
-                        <h3>Fulano da Silva</h3>
+                        <h3><?php echo $usuarioInfo['nome'] ?></h3>
                         <p><a href="">Aceitar</a> | <a href="">Recusar</a></p>
 
                     </div>
@@ -158,28 +163,9 @@
 
                 </div>
                 <!-- /.friend-request-single -->
-                <div class="friend-request-single">
-                    <img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" alt="">
-                    <div class="friend-request-single-info">
-                        <h3>Fulano da Silva</h3>
-                        <p><a href="">Aceitar</a> | <a href="">Recusar</a></p>
-
-                    </div>
-                    <!-- /.friend-request-single-info -->
-
-                </div>
-                <!-- /.friend-request-single -->
-                <div class="friend-request-single">
-                    <img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" alt="">
-                    <div class="friend-request-single-info">
-                        <h3>Fulano da Silva</h3>
-                        <p><a href="">Aceitar</a> | <a href="">Recusar</a></p>
-
-                    </div>
-                    <!-- /.friend-request-single-info -->
-
-                </div>
-                <!-- /.friend-request-single -->
+                <?php
+                    };
+                ?>
             </div>
             <!-- /.friends-request-feed -->
         </div>

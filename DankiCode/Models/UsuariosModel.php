@@ -49,6 +49,28 @@
             return true;
         }
 
+
+        public static function listarAmizadesPendentes(){
+            $pdo = \DankiCode\MySql::connect();
+
+            $listarAmizadesPendentes = $pdo->prepare("SELECT * FROM amizades WHERE recebeu = ? AND status = 0");
+
+            $listarAmizadesPendentes->execute(array($_SESSION['id']));
+
+            return $listarAmizadesPendentes->fetchAll();
+        }
+
+        public static function getUsuarioById($id){
+            $pdo = \DankiCode\MySql::connect();
+
+            $usuario = $pdo->prepare("SELECT * FROM usuarios WHERE id = ?");
+
+            $usuario->execute(array($id));
+
+            return $usuario->fetch();
+        }
+
+
         public static function existePedidoAmizade($idPara){
             $pdo = \DankiCode\MySql::connect();
 
