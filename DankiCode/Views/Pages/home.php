@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt_br">
 <head>
 
-    <title>Home Rede Social</title>
+    <title>Bem-Vindo, <?php echo $_SESSION['nome']; ?></title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,41 +16,172 @@
 <body>
 
     <section class="main-feed">
-        <div class="sidebar">
-            <div class="logo-sidebar">
-                <img src="<?php echo INCLUDE_PATH_STATIC ?>images/logodanki.svg" alt="">
-            </div>
-            <!-- /.logo-sidebar -->
-            <br>
-            <div class="menu-sidebar">
-                <h4>Menu</h4>
-                <br>
-                <a href="#">Feed</a>
-
-                <a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> Perfil</a>
-
-                <a href="#">Amigos</a>
-            </div>
-            <!-- /.menu-sidebar -->
-        </div>
-        <!-- /.sidebar -->
+        <?php 
+			include('includes/sidebar.php'); 
+		?>
         <div class="feed">
-            <div class="feed-single-post">
-                <div class="feed-single-post-author">
-                    <div class="img-single-post-author">
-                        <!--todo:COLOCAR IMAGEM PLACEHOLDER-->
+            <div class="feed-wraper">
+                <div class="feed-single-post">
+                    <div class="feed-single-post-author">
+                        <div class="img-single-post-author">
+                            <!--todo:COLOCAR IMAGEM PLACEHOLDER-->
+                            <img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" alt="">
+                        </div>
+                        <!-- /.img-single-post-author -->
+                        <div class="feed-single-post-author-info">
+                            <h3>Breno Arantes</h3>
+                            <p>04:20 20/04/2022</p>
+                        </div>
+                        <!-- /.feed-single-post-author-info -->
                     </div>
-                    <!-- /.img-single-post-author -->
-                    <h3>Breno</h3>
-                    <span>04:20 20/04/2022</span>
+                    <!-- /.feed-single-post-author -->
+                    <div class="feed-single-post-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga incidunt nostrum maiores possimus autem facere eius rerum quod numquam velit. Molestias officiis labore corporis ipsam quisquam laborum eligendi quaerat earum.</p>
+                    </div>
+                    <!-- /.feed-single-post-content -->
                 </div>
-                <!-- /.feed-single-post-author -->
-                <div class="feed-single-post-content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga incidunt nostrum maiores possimus autem facere eius rerum quod numquam velit. Molestias officiis labore corporis ipsam quisquam laborum eligendi quaerat earum.</p>
+                <!-- /.feed-single-post -->
+                <div class="feed-single-post">
+                    <div class="feed-single-post-author">
+                        <div class="img-single-post-author">
+                            <!--todo:COLOCAR IMAGEM PLACEHOLDER-->
+                            <img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" alt="">
+                        </div>
+                        <!-- /.img-single-post-author -->
+                        <div class="feed-single-post-author-info">
+                            <h3>Breno Arantes</h3>
+                            <p>04:20 20/04/2022</p>
+                        </div>
+                        <!-- /.feed-single-post-author-info -->
+                    </div>
+                    <!-- /.feed-single-post-author -->
+                    <div class="feed-single-post-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga incidunt nostrum maiores possimus autem facere eius rerum quod numquam velit. Molestias officiis labore corporis ipsam quisquam laborum eligendi quaerat earum.</p>
+                        <img src="<?php echo INCLUDE_PATH_STATIC ?>images/post-placeholder.png" alt="">
+                    </div>
+                    <!-- /.feed-single-post-content -->
                 </div>
-                <!-- /.feed-single-post-content -->
+                <!-- /.feed-single-post -->
+                <div class="feed-single-post">
+                    <div class="feed-single-post-author">
+                        <div class="img-single-post-author">
+                            <!--todo:COLOCAR IMAGEM PLACEHOLDER-->
+                            <img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" alt="">
+                        </div>
+                        <!-- /.img-single-post-author -->
+                        <div class="feed-single-post-author-info">
+                            <h3>Breno Arantes</h3>
+                            <p>04:20 20/04/2022</p>
+                        </div>
+                        <!-- /.feed-single-post-author-info -->
+                    </div>
+                    <!-- /.feed-single-post-author -->
+                    <div class="feed-single-post-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga incidunt nostrum maiores possimus autem facere eius rerum quod numquam velit. Molestias officiis labore corporis ipsam quisquam laborum eligendi quaerat earum.</p>
+                    </div>
+                    <!-- /.feed-single-post-content -->
+                </div>
+                <!-- /.feed-single-post -->
+                <div class="feed-single-post">
+                    <div class="feed-single-post-author">
+                        <div class="img-single-post-author">
+                            <!--todo:COLOCAR IMAGEM PLACEHOLDER-->
+                            <img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" alt="">
+                        </div>
+                        <!-- /.img-single-post-author -->
+                        <div class="feed-single-post-author-info">
+                            <h3>Breno Arantes</h3>
+                            <p>04:20 20/04/2022</p>
+                        </div>
+                        <!-- /.feed-single-post-author-info -->
+                    </div>
+                    <!-- /.feed-single-post-author -->
+                    <div class="feed-single-post-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga incidunt nostrum maiores possimus autem facere eius rerum quod numquam velit. Molestias officiis labore corporis ipsam quisquam laborum eligendi quaerat earum.</p>
+                    </div>
+                    <!-- /.feed-single-post-content -->
+                </div>
+                <!-- /.feed-single-post -->
+                <div class="feed-single-post">
+                    <div class="feed-single-post-author">
+                        <div class="img-single-post-author">
+                            <!--todo:COLOCAR IMAGEM PLACEHOLDER-->
+                            <img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" alt="">
+                        </div>
+                        <!-- /.img-single-post-author -->
+                        <div class="feed-single-post-author-info">
+                            <h3>Breno Arantes</h3>
+                            <p>04:20 20/04/2022</p>
+                        </div>
+                        <!-- /.feed-single-post-author-info -->
+                    </div>
+                    <!-- /.feed-single-post-author -->
+                    <div class="feed-single-post-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga incidunt nostrum maiores possimus autem facere eius rerum quod numquam velit. Molestias officiis labore corporis ipsam quisquam laborum eligendi quaerat earum.</p>
+                    </div>
+                    <!-- /.feed-single-post-content -->
+                </div>
+                <!-- /.feed-single-post -->
+                <div class="feed-single-post">
+                    <div class="feed-single-post-author">
+                        <div class="img-single-post-author">
+                            <!--todo:COLOCAR IMAGEM PLACEHOLDER-->
+                            <img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" alt="">
+                        </div>
+                        <!-- /.img-single-post-author -->
+                        <div class="feed-single-post-author-info">
+                            <h3>Breno Arantes</h3>
+                            <p>04:20 20/04/2022</p>
+                        </div>
+                        <!-- /.feed-single-post-author-info -->
+                    </div>
+                    <!-- /.feed-single-post-author -->
+                    <div class="feed-single-post-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga incidunt nostrum maiores possimus autem facere eius rerum quod numquam velit. Molestias officiis labore corporis ipsam quisquam laborum eligendi quaerat earum.</p>
+                    </div>
+                    <!-- /.feed-single-post-content -->
+                </div>
+                <!-- /.feed-single-post -->
             </div>
-            <!-- /.feed-single-post -->
+            <!-- /.feed-wraper -->
+
+            <div class="friends-request-feed">
+                <h4>Solicitações de amizade</h4>
+                <div class="friend-request-single">
+                    <img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" alt="">
+                    <div class="friend-request-single-info">
+                        <h3>Fulano da Silva</h3>
+                        <p><a href="">Aceitar</a> | <a href="">Recusar</a></p>
+
+                    </div>
+                    <!-- /.friend-request-single-info -->
+
+                </div>
+                <!-- /.friend-request-single -->
+                <div class="friend-request-single">
+                    <img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" alt="">
+                    <div class="friend-request-single-info">
+                        <h3>Fulano da Silva</h3>
+                        <p><a href="">Aceitar</a> | <a href="">Recusar</a></p>
+
+                    </div>
+                    <!-- /.friend-request-single-info -->
+
+                </div>
+                <!-- /.friend-request-single -->
+                <div class="friend-request-single">
+                    <img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" alt="">
+                    <div class="friend-request-single-info">
+                        <h3>Fulano da Silva</h3>
+                        <p><a href="">Aceitar</a> | <a href="">Recusar</a></p>
+
+                    </div>
+                    <!-- /.friend-request-single-info -->
+
+                </div>
+                <!-- /.friend-request-single -->
+            </div>
+            <!-- /.friends-request-feed -->
         </div>
         <!-- /.feed -->
     </section>

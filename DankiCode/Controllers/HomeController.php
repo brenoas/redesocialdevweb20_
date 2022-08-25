@@ -5,6 +5,13 @@
 
         public function index(){
 
+            if (isset($_GET['logout'])) {
+                session_unset();
+                session_destroy();
+                
+                \DankiCode\Utilidades::redirect(INCLUDE_PATH,'login.php');
+            }
+
             if(isset($_SESSION['login'])){
                 //renderiza a home do usuario.
                 \DankiCode\Views\MainView::render('home');
@@ -30,8 +37,10 @@
                         if (\DankiCode\Bcrypt::check($senha,$senhaBanco)) {
                             //usuario logado com sucesso
                             $_SESSION['login'] = $dados['email'];
-                            \DankiCode\Utilidades::alerta('Logado com sucesso!');
-                            \DankiCode\Utilidades::redirect(INCLUDE_PATH.'home');
+                            $_SESSION['id'] = $dados['id'];
+                            $_SESSION['nome'] = explode(' ',$dados['nome'])[0];
+                           // \DankiCode\Utilidades::alerta('Logado com sucesso!');
+                            \DankiCode\Utilidades::redirect(INCLUDE_PATH);
                         }else{
                             \DankiCode\Utilidades::alerta('Senha Inválida.');
                             \DankiCode\Utilidades::redirect(INCLUDE_PATH);
