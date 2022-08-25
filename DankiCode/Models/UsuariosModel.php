@@ -1,5 +1,6 @@
 <?php
     namespace DankiCode\Models;
+    
 
     class UsuariosModel{
 
@@ -48,6 +49,20 @@
             return true;
         }
 
+        public static function existePedidoAmizade($idPara){
+            $pdo = \DankiCode\MySql::connect();
+
+            $verificaAmizade = $pdo->prepare("SELECT * FROM amizades WHERE (enviou = ? AND recebeu = ?) OR (enviou = ? AND recebeu = ?)");
+
+            $verificaAmizade->execute(array($_SESSION['id'],$idPara,$idPara,$_SESSION['id']));
+
+            if ($verificaAmizade->rowCount() == 1) {
+                return false;
+            }else {
+                return true;
+            }
+
+        }
 
 
     }
