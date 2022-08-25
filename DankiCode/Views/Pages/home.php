@@ -156,7 +156,7 @@
                     <img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" alt="">
                     <div class="friend-request-single-info">
                         <h3><?php echo $usuarioInfo['nome'] ?></h3>
-                        <p><a href="">Aceitar</a> | <a href="">Recusar</a></p>
+                        <p><a href="<?php echo INCLUDE_PATH ?>aceitarAmizade=<?php echo $usuarioInfo['id']?>">Aceitar</a> | <a href="<?php echo INCLUDE_PATH ?>recusarAmizade=<?php echo $usuarioInfo['id']?>">Recusar</a></p>
 
                     </div>
                     <!-- /.friend-request-single-info -->

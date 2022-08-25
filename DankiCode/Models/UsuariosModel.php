@@ -86,8 +86,31 @@
 
         }
 
+        public static function atualizarPedidoAmizade($enviou,$status){
+            $pdo = \DankiCode\MySql::connect();
+
+            if ($status == 0) {
+                //recusei o pedido.
+                
+                $del = $pdo->prepare("DELETE FROM amizades WHERE enviou = ? AND receubeu = ? AND status = 0");
+                $del->execute(array($enviou,$_SESSION['id']));
+            }elseif($status == 1){
+
+                $aceitarPedido = $pdo->prepare("UPDATE amizades SET status = 1 WHERE enviou = ? AND recebeu = ?");
+
+                $aceitarPedido->execute(array($enviou,$_SESSION['id']));
+
+                if ($aceitarPedido->rowCount()== 1) {
+                    return true;
+                }else {
+                    return false;
+                }
+
+            }
+
+        }
+
+
+
 
     }
-
-
-?>

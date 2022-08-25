@@ -15,6 +15,26 @@
 
             if(isset($_SESSION['login'])){
                 //renderiza a home do usuario.
+
+                //existe pedido de amizade?
+                if(isset($_GET['recusarAmizade'])){
+                    $idEnviou = (int) $_GET['recusarAmizade'];
+                    \DankiCode\Models\UsuariosModel::atualizarPedidoAmizade($idEnviou,0);
+                    \DankiCode\Utilidades::alerta('Amizade Recusada.');
+                    \DankiCode\Utilidades::redirect(INCLUDE_PATH);
+                }elseif (isset($_GET['aceitarAmizade'])) {
+                    $idEnviou = (int) $_GET['aceitarAmizade'];
+                    if(\DankiCode\Models\UsuariosModel::atualizarPedidoAmizade($idEnviou,1)){
+                        \DankiCode\Utilidades::alerta('Amizade Aceita!');
+                        \DankiCode\Utilidades::redirect(INCLUDE_PATH);
+                    }else {
+                        \DankiCode\Utilidades::alerta('Ops.. um erro ocorreu!');
+                        \DankiCode\Utilidades::redirect(INCLUDE_PATH);
+                    }
+                    
+                    
+                }
+
                 \DankiCode\Views\MainView::render('home');
             }else{
                 //renderizar para criar conta.
