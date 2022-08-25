@@ -16,6 +16,7 @@
             }
         }
 
+        
         public static function listarComunidade(){
             $pdo = \DankiCode\MySql::connect();
 
