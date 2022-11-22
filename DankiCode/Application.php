@@ -19,7 +19,7 @@ class Application
         if(file_exists($loadName.'.php')){
             $this->controller = new $loadName();   
         }else{
-            include('Views/Pages/404.php');
+            include('Views/pages/404.php');
             die();
         }
 
